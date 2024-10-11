@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fahrenheit to Celsius</title>
+  </head>
+  <body>
+    <nav>
+      <a href="./home.html">Home</a>
+      <a href="./celsius.html">Celsius to Fahrenheit</a>
+    </nav>
+    <h1>Fahrenheit to Celsius Converter</h1>
+
+    <form action="submit">
+      <input type="text" id="fahrenheit" placeholder="Fahrenhiet Temperature" />
+      <br />
+      <button type="button" id="convertBtn">Convert</button>
+      <br />
+      <input type="text" id="celsius" placeholder="Celsius Temperature" />
+      <button type="reset">Reset</button>
+    </form>
+
+    <script>
+      window.onload = onConvertBtnClicked;
+
+      function onConvertBtnClicked() {
+        const convert = document.getElementById("convertBtn");
+        convert.onclick = convertTemperature;
+      }
+
+      function convertTemperature() {
+        const fahrenheit = document.getElementById("fahrenheit");
+        const degFahrenheit = Number(fahrenheit.value);
+        celsius.value = (((degFahrenheit - 32) * 5) / 9).toFixed(3);
+      }
+
+      // Fahrenheit temperature into Celsius
+      // (32deg F - 32) * 5 / 9 = C
+
+      //   const degFahrenheit = fahrenheit.value;
+      //   const celsius = ((degFahrenheit - 32) * 5) / 9;
+
+      //   console.log(degF + " degrees Fahrenheit is " + c + " in degrees Celsius");
+    </script>
+  </body>
+</html>
